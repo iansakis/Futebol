@@ -1,8 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.Dimension;
 
-public class PongGame extends JPanel implements ActionListener, KeyListener {
+public class FutebolGame extends JPanel implements ActionListener, KeyListener {
     // Configurações da tela
     private final int LARGURA = 800;
     private final int ALTURA = 500;
@@ -13,9 +14,9 @@ public class PongGame extends JPanel implements ActionListener, KeyListener {
     private int playerY = 200, cpuY = 200;
     private final int BARRA_LARGURA = 15, BARRA_ALTURA = 80;
 
-    public PongGame() {
+    public FutebolGame() {
         this.setPreferredSize(new Dimension(LARGURA, ALTURA));
-        this.setBackground(Color(34,139,34));
+        this.setBackground(new Color(34,139,34));
         this.addKeyListener(this);
         this.setFocusable(true);
         
@@ -43,7 +44,7 @@ public class PongGame extends JPanel implements ActionListener, KeyListener {
         g.setFont(new Font("Arial",Font.ITALIC, 14) );
 
         // onde ela vai ficar
-        g.DrawString("By Ian Sakis", LARGURA - 100, ALTURA - 20);
+        g.drawString("By Ian Sakis", 100, 20);
     }
 
     @Override
@@ -90,7 +91,7 @@ public class PongGame extends JPanel implements ActionListener, KeyListener {
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Java Futebol Pong");
-        PongGame game = new PongGame();
+        FutebolGame game = new FutebolGame();
         frame.add(game);
         frame.pack();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
